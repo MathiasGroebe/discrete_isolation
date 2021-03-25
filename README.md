@@ -1,5 +1,5 @@
 # Discrete isolation
-PostgreSQL/PostGIS implementation of the discrete isolation. The resulting value can be used for point selection purposes. It needs a single-point geometry and a numerical value. For usage, you need the data in a PostgreSQL database with the PostGIS extension. It works well with around 10,000 points; you have to consider a long execution time with more points. If you have less than 1,000 points, take a look at the free  (QGIS Plugin)[https://github.com/MathiasGroebe/point_selection/].
+PostgreSQL/PostGIS implementation of the discrete isolation. The resulting value can be used for point selection purposes. It needs a single-point geometry and a numerical value. For usage, you need the data in a PostgreSQL database with the PostGIS extension. It works well with around 10,000 points; you have to consider a long execution time with more points. If you have less than 1,000 points, take a look at the free  [QGIS Plugin](https://github.com/MathiasGroebe/point_selection/).
 
 ## Usage
 
