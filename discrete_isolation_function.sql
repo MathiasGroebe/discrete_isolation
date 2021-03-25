@@ -22,6 +22,8 @@ END IF;
 END;
 $$ LANGUAGE plpgsql PARALLEL SAFE COST 60;
 
+-- Second version of the function with a reduced complexity by limiting the search radius
+
 CREATE OR REPLACE FUNCTION discrete_isolation(peak_table text, peak_table_geom_column_name text, elevation_column text, peak_geometry geometry, elevation_value numeric, max_search_radius numeric) returns decimal as
 $$
 DECLARE isolation_value decimal;
