@@ -1,5 +1,5 @@
 # Discrete isolation
-PostgreSQL/PostGIS implementation of the discrete isolation. The resulting value can used for point selection purposes. It needs a single point geometry and a numerical value. For usage you need the data in a PostgreSQL database with the PostGIS extension. It works well with around 10,000 points, with more points you have to consider a long execution time. If you have less then 1,000 point take a look at the free (QGIS Plugin)[https://github.com/MathiasGroebe/point_selection/].
+PostgreSQL/PostGIS implementation of the discrete isolation. The resulting value can be used for point selection purposes. It needs a single-point geometry and a numerical value. For usage, you need the data in a PostgreSQL database with the PostGIS extension. It works well with around 10,000 points; you have to consider a long execution time with more points. If you have less than 1,000 points, take a look at the free  (QGIS Plugin)[https://github.com/MathiasGroebe/point_selection/].
 
 ## Usage
 
@@ -17,17 +17,17 @@ The syntax for the function is the follwing:
     discrete_isolation(table_name::text, name_of_geometry_column::text, name_of_elevation_column::text,
                         geometry_of_point::geometry, elevation_of_point::numeric (, max_search_radius::numeric))
 
-All calculation are made within the given spatial referenc system, also the isolation is measured in this systems. For best results, project first the data and afterwards calculate the isolation
+All calculations are made within the given spatial reference system; also, the isolation is measured in this system. For best results, project first the data and afterward calculate the isolation.
 
-For calculating the discrete isolation in our example run the followinng query:
+For calculating the discrete isolation in our example, run the following query:
 
     UPDATE peaks
     SET isolation = discrete_isolation('peaks', 'geom', 'elevation', geom, elevation)
     
-It will fill the isolation colum in the sample table called "peaks". If you want to limit the search radius, you can use the following query. 
+It will fill the isolation column in the sample table called "peaks". If you want to limit the search radius, you can use the following query. 
 
     UPDATE peaks
-    SET isolation = discrete_isolation('peaks', 'geom', 'elevation', geom, elevation, 1)
+    SET isolation = discrete_isolation('peaks', 'geom', 'elevation', geom, elevation, 100000)
     
 
 
