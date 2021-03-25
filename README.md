@@ -17,7 +17,7 @@ The syntax for the function is the follwing:
     discrete_isolation(table_name::text, name_of_geometry_column::text, name_of_elevation_column::text,
                         geometry_of_point::geometry, elevation_of_point::numeric (, max_search_radius::numeric))
 
-All calculations are made within the given spatial reference system; also, the isolation is measured in this system. For best results, project first the data and afterward calculate the isolation.
+All calculations are made within the given spatial reference system; also, the isolation is measured in this system. For best results, project first the data and afterward calculate the isolation. For a better performance create an index on the elevation and geometry column. 
 
 For calculating the discrete isolation in our example, run the following query:
 
