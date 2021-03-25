@@ -20,7 +20,7 @@ RETURN isolation_value;
 END IF;
 
 END;
-$$ LANGUAGE plpgsql PARALLEL SAFE COST 60;
+$$ LANGUAGE plpgsql PARALLEL SAFE;
 
 -- Second version of the function with a reduced complexity by limiting the search radius
 
@@ -46,4 +46,4 @@ RETURN isolation_value;
 END IF;
 
 END;
-$$ LANGUAGE plpgsql PARALLEL SAFE COST 30;
+$$ LANGUAGE plpgsql PARALLEL SAFE;
